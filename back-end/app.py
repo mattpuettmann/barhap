@@ -1,4 +1,7 @@
+from flask import Flask
 import models
+
+app = Flask(__name__)
 
 
 DEBUG = True
