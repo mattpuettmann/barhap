@@ -36,9 +36,30 @@ class App extends Component {
     }
   }
 
-
-
-
+  handleLogin = async (formData) => {
+    try{
+      const response = await fetch('http://localhost:8000/users/login', {
+        method: "POST",
+        body: JSON.stringify(formData),
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      const parsedResponse = await response.json()
+      if(response.status === 201){
+        this.setState({
+          loggedIn: true,
+          username: formData.username,
+          email: parsedResponse.email,
+          city: parsedResponse.city,
+          state: parsedResponse.state
+        })
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
 
   handleLogout =  () => {
     this.setState({
@@ -52,7 +73,7 @@ class App extends Component {
       {this.state.loggedIn ?
       <UserContainer handleLogout={this.handleLogout} username={this.state.username}/>
       :
-      <AuthGateway handleRegister={this.handleRegister}/>
+      <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin}/>
       }
     </div>
   }

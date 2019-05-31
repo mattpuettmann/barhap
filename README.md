@@ -1,6 +1,6 @@
-# barhap
+# barhapp
 
-BARHAP allows users to discover and save their favorite entertainment and nightlife locations in one easy place. Just create an account to discover where the action is and plan your fun accordingly.
+Barhapp allows users to discover and save their favorite entertainment and nightlife locations in one easy place. Just create an account to discover where the action is and plan your fun accordingly.
 
 MVP:
 1. New user registration
