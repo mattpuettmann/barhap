@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import './App.css';
 import AuthGateway from './AuthGateway/AuthGateway';
 import UserContainer from './UserContainer/UserContainer';
@@ -35,16 +36,25 @@ class App extends Component {
     }
   }
 
+
+
+
+
+  handleLogout =  () => {
+    this.setState({
+      loggedIn: false
+    })
+  }
+
   render(){
     return <div className="App">
-        <h2>BarHap</h2>
-        {this.state.loggedIn ?
-        <UserContainer username={this.state.username}/>
-        :
-        <AuthGateway handleRegister={this.handleRegister}/>
-        }
-        
-      </div>
+      <h2>BarHap</h2>
+      {this.state.loggedIn ?
+      <UserContainer handleLogout={this.handleLogout} username={this.state.username}/>
+      :
+      <AuthGateway handleRegister={this.handleRegister}/>
+      }
+    </div>
   }
 }
 
