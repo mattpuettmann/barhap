@@ -35,3 +35,8 @@ def initialize():
     DATABASE.connect()
     DATABASE.create_tables([User], safe=True)
     DATABASE.close()
+
+
+# possibly need to add lat and lng fields to User class. Holding off for now because don't want ot break anything.
+# users can create profiles, login, logout, and keep lat/lng data saved, but when server restarts it goes ka-put.
+# but that info comes from front end api, isn't user inputted, sooooooo.........????????

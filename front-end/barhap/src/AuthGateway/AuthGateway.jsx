@@ -12,8 +12,8 @@ class AuthGateway extends Component {
     render(){
         return <div className="homePage">
             <div className="authDiv">
-                <LoginForm handleLogin={this.props.handleLogin}/>  
-                <RegistrationForm handleRegister={this.props.handleRegister}/>
+                <LoginForm handleLogin={this.props.handleLogin} handleGeo={this.props.handleGeo}/>  
+                <RegistrationForm handleRegister={this.props.handleRegister} handleGeo={this.props.handleGeo}/>  
             </div>
         </div>
     }

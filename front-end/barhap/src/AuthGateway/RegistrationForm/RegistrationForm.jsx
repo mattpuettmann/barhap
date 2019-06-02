@@ -17,6 +17,8 @@ class RegistrationForm extends Component {
         e.preventDefault();
         console.log(this.state)
         this.props.handleRegister(this.state)
+        this.props.handleGeo(this.state.city, this.state.state)
+
     }
 
 
