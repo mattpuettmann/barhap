@@ -29,15 +29,26 @@ class RegistrationForm extends Component {
 
 
     render(){
-        return <form onSubmit={this.handleSubmit}>
-            Username: <input onChange={this.handleChange} type="text" name="username"/><br/>
-            Email: <input onChange={this.handleChange} type="text" name="email"/><br/>
-            City: <input onChange={this.handleChange} type="text" name="city"/><br/>
-            State: <input onChange={this.handleChange} type="text" name="state"/><br/>
-            Password: <input onChange={this.handleChange} type="password" name="password"/><br/>
-            Verify Password: <input onChange={this.handleChange} type="password" name="verify_password"/><br/>
-            <input type="submit"/>
-        </form>
+        return <div className="regForm">
+            <form onSubmit={this.handleSubmit}>
+                <h3>New User? Sign Up Here:</h3>
+                <div className="regFormInput">
+                    Username: <br/>
+                    <input onChange={this.handleChange} type="text" name="username"/><br/>
+                    Email: <br/>
+                    <input onChange={this.handleChange} type="text" name="email"/><br/>
+                    City: <br/>
+                    <input onChange={this.handleChange} type="text" name="city"/><br/>
+                    State: <br/>
+                    <input onChange={this.handleChange} type="text" name="state"/><br/>
+                    Password: <br/>
+                    <input onChange={this.handleChange} type="password" name="password"/><br/>
+                    Verify Password: <br/>
+                    <input onChange={this.handleChange} type="password" name="verify_password"/><br/>
+                </div>
+                <input type="submit"/>
+            </form>
+        </div>
     }
 }
 

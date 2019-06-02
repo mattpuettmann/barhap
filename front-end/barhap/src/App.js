@@ -69,12 +69,13 @@ class App extends Component {
 
   render(){
     return <div className="App">
-      <h2>BarHap</h2>
+      <h2>BarHapp</h2>
       {this.state.loggedIn ?
-      <UserContainer handleLogout={this.handleLogout} username={this.state.username}/>
+      <UserContainer handleLogout={this.handleLogout} username={this.state.username} city={this.state.city} state={this.state.state}/>
       :
       <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin}/>
       }
+      <div className="footer">© 2019 RARE BREED COLLECTIVE</div>
     </div>
   }
 }

@@ -1,33 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+
 .App {
   text-align: center;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App h2 {
+  font-family: Pacifico;
+  color: #ffffff;
+  background-color: #7015EB;
+  margin-top: 0;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.authDiv {
+  background-color: rgb(228, 228, 227);
+  margin-left: 20%;
+  margin-right: 20%;
+  display: inline-block;
+  padding: 0 25px 10px 25px;
+  border-radius: 5px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  opacity: 0.9;
+}
+
+.authDiv h3 {
+  font-family: Pacifico;
+  color: #7015EB;
+}
+
+
+.regForm {
+  position: relative;
+}
+.regFormInput {
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+.loginForm {
+  position: relative;
+}
+.loginFormInput {
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+
+button {
+  background-color: #7015EB;
+  border: none;
   color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
 }
 
-.App-link {
-  color: #61dafb;
+input[type=submit] {
+    background-color: #7015EB;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.input[type=submit]:hover {
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  font-size: 8px;
+  background-color: #7015EB;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1.5rem; 
 }
