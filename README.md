@@ -7,14 +7,17 @@ MVP:
 2. Login/Logout authentication ✔
 3. User location search serving as basis for Google Places and Dark Sky api's ✔
 4. Map rendered via Google Maps api ✔
-5. Weather data incorporated via Dark Sky api
-6. Local nightlife location data incorporated via Google Places
-7. Nightlife data from Google Places api plotted on the interactive map
+5. Weather data incorporated via Dark Sky api ✔
+6. Local nightlife location data incorporated via Google Places ✔
+7. Nightlife data from Google Places api plotted on the interactive map ✔
 
 NICE TO HAVE:
 1. Fully responsive styling
 2. Check in capability for places
 3. Deployed on Heroku
+
+SUPER NICE TO HAVE:
+1. A job.
 
 STACK:
 Python (backend), React.js (frontend), Postgresql, Heroku (?)

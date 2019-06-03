@@ -72,9 +72,25 @@
   color: #7015EB;
 }
 
+.barNames {
+  color: #7015EB;
+  display: inline-block;
+  
+}
 .barNames h5{
-  font-size: 10px;
+  font-size: 12px;
   display: inline;
+  padding: 0 7px 0 7px;
+}
+
+text {
+  color: red;
+}
+
+.weatherConditions h5 {
+  display: inline;
+  margin: 0 10px 0 10px;
+  font-size: 12px;
 }
 
 .regForm {
@@ -128,9 +144,7 @@ input[type=submit] {
   border-radius: 0;
 }
 
-.userContainer {
-  padding-bottom: 30px;
-}
+
 .userContainer input[type=text] {
   height: 24px;
   font-size: 15px;
@@ -148,6 +162,9 @@ input[type=submit] {
 }
 .barsContainer h4 {
   padding-top: 10px;
+  padding-bottom: 0;
+  font-family: Pacifico;
+  font-size: 24px;
 }
 
 .mapContainer {
