@@ -31,7 +31,7 @@ class BarsContainer extends Component {
         return <div className="barsContainer">
             <h4>Bars in {this.props.city}:</h4>
             {this.props.lat &&
-                <div className="mapContainer" style={{ height: '400px', width: '680px' }}>
+                <div className="mapContainer" style={{ height: '400px', width: '706px' }}>
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: 'AIzaSyDrIbIKBD3WPDwHWhiq7i9yaOEJp-C8xi4'}}
                         defaultCenter={this.state.center}

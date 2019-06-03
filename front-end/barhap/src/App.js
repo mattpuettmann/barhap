@@ -96,15 +96,18 @@ class App extends Component {
 
 
   render(){
-    return <div className="App">
-      <div className="header">
-        <h2>BarHapp</h2>
+    return <div className="wholePage">
+      <div className="App">
+        <div className="header">
+          <h2>BarHapp</h2>
+        </div>
+        {this.state.loggedIn ?
+        <UserContainer lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
+        :
+        <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
+        }
+        
       </div>
-      {this.state.loggedIn ?
-      <UserContainer lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
-      :
-      <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
-      }
       <div className="footer">© 2019 RARE BREED COLLECTIVE // <a href="https://www.linkedin.com/in/matthewpuettmann/">HIRE MATT</a></div>
     </div>
   }

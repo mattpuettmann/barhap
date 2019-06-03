@@ -12,4 +12,7 @@ MVP:
 NICE TO HAVE:
 1. Fully responsive styling
 2. Check in capability for places
+3. Deployed on Heroku
 
+STACK:
+Python, React.js, Postgresql, Heroku
