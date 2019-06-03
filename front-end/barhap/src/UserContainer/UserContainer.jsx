@@ -12,13 +12,9 @@ class UserContainer extends Component {
     }
     handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(this.props)
         this.props.handleQuery(this.state.city)
-        this.setState({
-            city: [e.target.value]
-        })
-        console.log(this.state.city)
-        this.searchBars()
+        this.showState()
+
     }
 
     handleChange = (e) => {
@@ -28,25 +24,14 @@ class UserContainer extends Component {
     }
 
     showState = () => {
-        console.log(this.state)
+        console.log(this.state.city)
         console.log(this.props)
     }
-    searchBars = async (formData) => {
-        console.log(formData)
-        console.log(this.props.city)
-        console.log(this.state.city)
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=bars+in+${this.state.city}&key=AIzaSyA2318qe8rH7UavfkasiDAngRA5wT3ESsw`)
-        const parsedResponse = await response.json()
-        console.log(parsedResponse)
-        console.log(parsedResponse.results[0].name)
-        this.setState({
-            bars: parsedResponse.results
-        })
-        console.log(this.state.bars)
-    }
+
 
 
     render(){
+
         return <div className="userContainer">
             <h3>Welcome, {this.props.username}</h3>
             <form onSubmit={this.handleSubmit}>
