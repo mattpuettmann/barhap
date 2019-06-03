@@ -9,7 +9,9 @@ class RegistrationForm extends Component {
             city: "",
             state: "",
             password: "",
-            verify_password: ""
+            verify_password: "",
+            lat: "",
+            lng: ""
         }
     }
 

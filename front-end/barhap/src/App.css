@@ -3,34 +3,50 @@
 
 .App {
   text-align: center;
-  background-image: url('http://thebasementwc.com/wp-content/uploads/2019/02/bars-in-Lutz-FL-1080x628.jpg');
-  position: cover;
+  position: relative;
+  /* background-image: url('http://thebasementwc.com/wp-content/uploads/2019/02/bars-in-Lutz-FL-1080x628.jpg'); */
+  /* background-image: url('http://media.virbcdn.com/cdn_images/resize_1024x1024/f4/ff09fc6db70ad2c1-alley.jpg'); */
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center center;
+  z-index: 1;
 }
 
-/* .header {
+.App a {
+  color: white;
+  text-decoration: none;
+}
+
+.header {
   background-color: #7015EB;
   color: #FFFFFF;
-  margin-top: 0;
   padding-top: 5px;
   padding-bottom: 10px;
+  max-height: 70px;
 }
 .header h2 {
   font-family: Pacifico;
-} */
+  /* padding-bottom: 0; */
+}
+.header small {
+  font-family: Pacifico;
+  padding-top: 0;
+  font-size: 8px;
+}
 
-.App h2 {
+/* .App h2 {
   font-family: Pacifico;
   color: #ffffff;
   background-color: #7015EB;
   margin-top: 0;
   padding-top: 5px;
   padding-bottom: 10px;
+} */
+
+.App img {
+  position: relative;
+
 }
-
-
 
 .authDiv {
   background-color: rgb(228, 228, 227);
@@ -41,6 +57,8 @@
   border-radius: 5px;
   justify-content: center;
   opacity: 0.9;
+  position: relative;
+  margin-top:20px;
 }
 .authDiv img {
   max-width: 60%;
@@ -97,6 +115,31 @@ input[type=submit] {
   opacity: 0.8;
 }
 
+.searchButton {
+  background-color: #7015EB;
+  padding: 3px 3px;
+  border-radius: 0;
+}
+
+.userContainer input[type=text] {
+  height: 24px;
+  font-size: 15px;
+}
+
+.barsContainer {
+  background-color: rgb(228, 228, 227);
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 5px;
+}
+
+.mapContainer {
+  text-align: center;
+  justify-content: center;
+  width: 600px;
+}
+
 .footer {
   font-size: 8px;
   background-color: #7015EB;
@@ -106,4 +149,14 @@ input[type=submit] {
   bottom: 0;
   width: 100%;
   height: 1rem; 
+}
+
+.showState {
+  background-color: green;
+  /* margin-bottom: 5px; */
+  position: relative;
+}
+
+a:hover {
+  color: #7BEAFE;
 }

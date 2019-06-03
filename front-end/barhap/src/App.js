@@ -24,7 +24,8 @@ class App extends Component {
       body: JSON.stringify(formData),
       credentials: "include",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": '*'
       }
     })
     const parsedResponse = await response.json()
@@ -33,6 +34,7 @@ class App extends Component {
         loggedIn: true,
         username: parsedResponse.username,
         city: parsedResponse.city,
+        email: parsedResponse.email,
         state: parsedResponse.state
       })  
     }
@@ -56,7 +58,8 @@ class App extends Component {
           username: formData.username,
           email: parsedResponse.email,
           city: parsedResponse.city,
-          state: parsedResponse.state
+          state: parsedResponse.state,
+
         })
       }
     }catch(err){
@@ -70,19 +73,27 @@ class App extends Component {
     })
   }
   handleGeo = async (city, state) => {
-    const result = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
-    const parsedResult = await result.json();
-    console.log(parsedResult.results[0].geometry.location.lat)
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
+    const parsedResponse = await response.json();
+    console.log(parsedResponse.results[0].geometry.location.lat)
     await this.setState({
-      lat: parsedResult.results[0].geometry.location.lat,
-      lng: parsedResult.results[0].geometry.location.lng
+      lat: parsedResponse.results[0].geometry.location.lat,
+      lng: parsedResponse.results[0].geometry.location.lng
     })
   }
 
-  showState = (e) => {
-    e.preventDefault();
-    console.log(this.state)
+
+  handleQuery = async (city) => {
+    console.log('hq firing')
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
+    const parsedResponse = await response.json();
+    console.log(parsedResponse.results[0].geometry)
+    this.setState({
+      lat: parsedResponse.results[0].geometry.location.lat,
+      lng: parsedResponse.results[0].geometry.location.lng
+    })
   }
+
 
   render(){
     return <div className="App">
@@ -90,13 +101,11 @@ class App extends Component {
         <h2>BarHapp</h2>
       </div>
       {this.state.loggedIn ?
-      <UserContainer handleLogout={this.handleLogout} username={this.state.username} city={this.state.city} state={this.state.state}/>
+      <UserContainer lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
       :
       <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
       }
-
-      <button onClick={this.showState}>State</button>
-      <div className="footer">© 2019 RARE BREED COLLECTIVE</div>
+      <div className="footer">© 2019 RARE BREED COLLECTIVE // <a href="https://www.linkedin.com/in/matthewpuettmann/">HIRE MATT</a></div>
     </div>
   }
 }

@@ -63,7 +63,6 @@ class UserList(Resource):
     def post(self):
         args = self.reqparse.parse_args()
         if args['password'] == args['verify_password']:
-            print(args)
             user = models.User.create_user(**args)
             login_user(user)
             return marshal(user, user_fields), 201
@@ -99,19 +98,13 @@ class AuthList(Resource):
 
     @marshal_with(user_fields)
     def post(self):
-        print('user login route hit')
         args = self.reqparse.parse_args()
-        print(args)
         user = models.User.get(username=args.username)
         candidate = args['password']
         check = check_password_hash(user.password, candidate)
-        print(check)
         if check == True:
-            print(user.username, 'this is the user object')
-            print(args.password, 'this is args pw')
             login_user(user)
             return marshal(user, user_fields), 201
-
         print('wrong password ya goof!')
 
 
