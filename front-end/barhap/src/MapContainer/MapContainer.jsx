@@ -13,7 +13,6 @@ class MapContainer extends Component {
         }
     }
     componentDidMount(){
-        console.log(this.props)
         this.setState({
           center: {
             lat: this.props.lat,
@@ -36,5 +35,3 @@ class MapContainer extends Component {
 }
 
 export default MapContainer
-
-//renderMap() function maybe?

@@ -72,6 +72,10 @@
   color: #7015EB;
 }
 
+.barNames h5{
+  font-size: 10px;
+  display: inline;
+}
 
 .regForm {
   position: relative;

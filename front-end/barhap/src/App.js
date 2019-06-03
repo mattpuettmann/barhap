@@ -51,7 +51,6 @@ class App extends Component {
         }
       })
       const parsedResponse = await response.json()
-      console.log(parsedResponse)
       if(response.status === 201){
         this.setState({
           loggedIn: true,
@@ -75,7 +74,6 @@ class App extends Component {
   handleGeo = async (city, state) => {
     const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
     const parsedResponse = await response.json();
-    console.log(parsedResponse.results[0].geometry.location.lat)
     await this.setState({
       lat: parsedResponse.results[0].geometry.location.lat,
       lng: parsedResponse.results[0].geometry.location.lng
@@ -84,10 +82,8 @@ class App extends Component {
 
 
   handleQuery = async (city) => {
-    console.log('hq firing')
     const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
     const parsedResponse = await response.json();
-    console.log(parsedResponse.results[0].geometry)
     this.setState({
       lat: parsedResponse.results[0].geometry.location.lat,
       lng: parsedResponse.results[0].geometry.location.lng
@@ -99,7 +95,7 @@ class App extends Component {
     return <div className="wholePage">
       <div className="App">
         <div className="header">
-          <h2>BarHapp</h2>
+          <h2>Barhapp</h2>
         </div>
         {this.state.loggedIn ?
         <UserContainer lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
