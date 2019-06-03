@@ -42,7 +42,6 @@ class BarsContainer extends Component {
     showLocalConditions = async () => {
         const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5ade28f3e9751e874bf8fb87b199917e/${this.props.lat},${this.props.lng}`)
         const parsedResponse = await response.json()
-        console.log(parsedResponse)
         this.setState({
             temperature: parsedResponse.currently.temperature,
             precip: parsedResponse.currently.precipProbability,
@@ -51,10 +50,7 @@ class BarsContainer extends Component {
     }
 
     render(){
-        console.log(this.state.bars)
         const mapStuff = this.state.bars.map((bar) => {
-            console.log(bar.geometry.location.lng)
-            console.log(bar.geometry.location.lat)
             return <AnyReactComponent
                     lat={bar.geometry.location.lat}
                     lng={bar.geometry.location.lng}

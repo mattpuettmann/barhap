@@ -71,14 +71,14 @@ class App extends Component {
       loggedIn: false
     })
   }
-  handleGeo = async (city, state) => {
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
-    const parsedResponse = await response.json();
-    await this.setState({
-      lat: parsedResponse.results[0].geometry.location.lat,
-      lng: parsedResponse.results[0].geometry.location.lng
-    })
-  }
+  // handleGeo = async (city, state) => {
+  //   const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city},+${state}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
+  //   const parsedResponse = await response.json();
+  //   await this.setState({
+  //     lat: parsedResponse.results[0].geometry.location.lat,
+  //     lng: parsedResponse.results[0].geometry.location.lng
+  //   })
+  // }
 
 
   handleQuery = async (city) => {

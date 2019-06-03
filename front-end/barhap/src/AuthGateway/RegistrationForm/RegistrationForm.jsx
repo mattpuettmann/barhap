@@ -17,9 +17,8 @@ class RegistrationForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(this.state)
         this.props.handleRegister(this.state)
-        this.props.handleGeo(this.state.city, this.state.state)
+
 
     }
 
@@ -41,10 +40,6 @@ class RegistrationForm extends Component {
                     <input onChange={this.handleChange} type="text" name="username"/><br/>
                     Email: <br/>
                     <input onChange={this.handleChange} type="text" name="email"/><br/>
-                    City: <br/>
-                    <input onChange={this.handleChange} type="text" name="city"/><br/>
-                    State: <br/>
-                    <input onChange={this.handleChange} type="text" name="state"/><br/>
                     Password: <br/>
                     <input onChange={this.handleChange} type="password" name="password"/><br/>
                     Verify Password: <br/>
