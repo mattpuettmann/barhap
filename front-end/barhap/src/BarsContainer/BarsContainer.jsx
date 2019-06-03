@@ -11,7 +11,8 @@ class BarsContainer extends Component {
                 lng: null
             },
             zoom: 13,
-            isLoading: true
+            isLoading: true,
+            bars: []
         }
     }
     componentDidMount(){
@@ -25,10 +26,13 @@ class BarsContainer extends Component {
                 lng: this.props.lng
             }
         })
+
     }
 
     render(){
+        
         return <div className="barsContainer">
+            <small>The local weather in {this.props.city}:</small>
             <h4>Bars in {this.props.city}:</h4>
             {this.props.lat &&
                 <div className="mapContainer" style={{ height: '400px', width: '706px' }}>
