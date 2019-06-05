@@ -7,7 +7,7 @@
 .App {
   text-align: center;
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 
 .App a {
@@ -16,8 +16,8 @@
 }
 
 .homePage {
-  background-image: url('http://thebasementwc.com/wp-content/uploads/2019/02/bars-in-Lutz-FL-1080x628.jpg');
-  height: 100%;
+  background-image: url('./barhapp-bg.png');
+  height: 100vh;
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center center;
@@ -81,12 +81,11 @@
   color: #7015EB;
   /* display: inline-block;
   width: 50%; */
-  height: 100px;
+  height: 50px;
   justify-content: center;
   background-color: rgb(205, 205, 205);
   vertical-align: middle;
   margin: 5px 5px 5px 5px;
-
 }
 .barNames h5{
   font-size: 12px;
@@ -94,8 +93,15 @@
   margin-bottom: 1px;
 }
 .barNames h6 {
-  /* margin-top: 2px; */
+  margin-top: 2px;
+  margin-bottom: 0;
   color: black;
+}
+.barNames span {
+  color: black;
+}
+.barNames:hover {
+  background-color:rgb(190, 190, 190);
 }
 
 .barList {
@@ -189,10 +195,16 @@ input[type=submit] {
   margin-bottom: 25px;
 }
 .barsContainer h4 {
-  padding-top: 10px;
+  /* padding-top: 10px; */
   padding-bottom: 0;
+  margin-bottom: 5px;
   font-family: Pacifico;
   font-size: 24px;
+}
+
+.weather h4 {
+  background-color: #7015EB;
+  color: #FFFFFF;
 }
 
 .mapContainer {

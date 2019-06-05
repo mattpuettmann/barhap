@@ -14,7 +14,8 @@ class App extends Component {
       city: null,
       state: null,
       lat: null,
-      lng: null
+      lng: null,
+      isSearched: null
     }
   }
 
@@ -56,8 +57,8 @@ class App extends Component {
           loggedIn: true,
           username: formData.username,
           email: parsedResponse.email,
-          city: parsedResponse.city,
-          state: parsedResponse.state,
+          // city: parsedResponse.city,
+          // state: parsedResponse.state,
 
         })
       }
@@ -73,23 +74,26 @@ class App extends Component {
   }
 
   handleQuery = async (city) => {
+    console.log('query firing')
     const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
     const parsedResponse = await response.json();
-    this.setState({
+    await this.setState({
       lat: parsedResponse.results[0].geometry.location.lat,
-      lng: parsedResponse.results[0].geometry.location.lng
+      lng: parsedResponse.results[0].geometry.location.lng,
+      isSearched: true
     })
   }
 
 
   render(){
+    console.log(this.state);
     return <div className="wholePage">
       <div className="App">
         <div className="header">
           <h2>Barhapp</h2>
         </div>
         {this.state.loggedIn ?
-        <UserContainer lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
+        <UserContainer isSearched={this.state.isSearched} lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
         :
         <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
         }

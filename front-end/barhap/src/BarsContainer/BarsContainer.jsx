@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import ConditionsContainer from '../ConditionsContainer/ConditionsContainer';
-import icon from '../map-pin-3.png';
+import icon from '../map-pin-5.png';
 
 const AnyReactComponent = ({ text }) => <div>{text}<img src={icon}></img></div>;
 
@@ -28,6 +28,7 @@ class BarsContainer extends Component {
     }
 
     componentDidMount(){
+        console.log(this.props);
         this.setState({
             isLoading: false,
             center: {
@@ -38,6 +39,9 @@ class BarsContainer extends Component {
         this.searchBars()
         this.showLocalConditions()
     }
+    componentWillReceiveProps(){
+        console.log(this.props);
+    }
     searchBars = async () => {
         const response = await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=bars+in+${this.props.city}&key=AIzaSyA2318qe8rH7UavfkasiDAngRA5wT3ESsw`)
         const parsedResponse = await response.json()
@@ -46,6 +50,7 @@ class BarsContainer extends Component {
         })
     }
     showLocalConditions = async () => {
+        console.log(this.props);
         const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5ade28f3e9751e874bf8fb87b199917e/${this.props.lat},${this.props.lng}`)
         const parsedResponse = await response.json()
         this.setState({
@@ -77,10 +82,11 @@ class BarsContainer extends Component {
                 
         })
         const barList = this.state.bars.map((bar) => {
+
             return <div key={bar.id} className="barNames">
                 <h5>{bar.name}, <span>{bar.rating}/5 stars</span></h5>
                 <h6>{bar.formatted_address}</h6>
-                {bar.opening_hours.open_now ?
+                {(bar.opening_hours && bar.opening_hours.open_now) ?
                 <h6>Currently Open</h6>
                 :
                 null
@@ -88,8 +94,11 @@ class BarsContainer extends Component {
             </div>
         })
         return <div className="barsContainer">
-            <h4>The local weather in {this.props.city}:</h4>
-            <ConditionsContainer city={this.props.city} lat={this.state.center.lat} lng={this.state.center.lng} temperature={this.state.temperature} precip={this.state.precip} summary={this.state.summary}/>
+            <div className="weather">
+                <h4>The local weather in {this.props.city}:</h4>
+                <ConditionsContainer city={this.props.city} lat={this.state.center.lat} lng={this.state.center.lng} temperature={this.state.temperature} precip={this.state.precip} summary={this.state.summary}/>          
+            </div>
+
             <h4>Bars in {this.props.city}:</h4>
 
             {this.props.lat &&
