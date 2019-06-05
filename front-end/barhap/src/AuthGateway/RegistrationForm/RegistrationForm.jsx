@@ -36,14 +36,14 @@ class RegistrationForm extends Component {
             <form onSubmit={this.handleSubmit}>
                 <h3>New User? Sign Up Here:</h3>
                 <div className="regFormInput">
-                    Username: <br/>
-                    <input onChange={this.handleChange} type="text" name="username"/><br/>
-                    Email: <br/>
-                    <input onChange={this.handleChange} type="text" name="email"/><br/>
-                    Password: <br/>
-                    <input onChange={this.handleChange} type="password" name="password"/><br/>
-                    Verify Password: <br/>
-                    <input onChange={this.handleChange} type="password" name="verify_password"/><br/>
+
+                    <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/><br/>
+
+                    <input onChange={this.handleChange} type="text" name="email" placeholder="Email"/><br/>
+
+                    <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/><br/>
+
+                    <input onChange={this.handleChange} type="password" name="verify_password" placeholder="Verify Password"/><br/>
                 </div>
                 <input type="submit"/>
             </form>

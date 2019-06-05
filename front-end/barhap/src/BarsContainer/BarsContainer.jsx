@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
+import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import ConditionsContainer from '../ConditionsContainer/ConditionsContainer';
+import icon from '../map-pin-3.png';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }) => <div>{text}<img src={icon}></img></div>;
+
+
+
 
 class BarsContainer extends Component {
     constructor(){
@@ -21,6 +26,7 @@ class BarsContainer extends Component {
             summary: null
         }
     }
+
     componentDidMount(){
         this.setState({
             isLoading: false,
@@ -51,11 +57,24 @@ class BarsContainer extends Component {
 
     render(){
         const mapStuff = this.state.bars.map((bar) => {
-            return <AnyReactComponent
-                    lat={bar.geometry.location.lat}
-                    lng={bar.geometry.location.lng}
-                    text="BAR!"
+            console.log(bar.geometry.location.lat)
+            return (
+            <AnyReactComponent
+                color='red'
+                lat = {bar.geometry.location.lat}
+                lng = {bar.geometry.location.lng}
+                icon = {"/map-pin.png"}
+                // text="BAR!"
                 />
+            )
+            // <Marker
+            //     position = {{lat: bar.geometry.location.lat, lng: bar.geometry.location.lng}}
+            //     icon = {{
+            //         url: 'http://www.myiconfinder.com/uploads/iconsets/256-256-76f453c62108782f0cad9bfc2da1ae9d.png',
+                    
+            //       }}
+            // />
+                
         })
         const barList = this.state.bars.map((bar) => {
             return <div key={bar.id} className="barNames">
@@ -66,7 +85,9 @@ class BarsContainer extends Component {
             <h4>The local weather in {this.props.city}:</h4>
             <ConditionsContainer city={this.props.city} lat={this.state.center.lat} lng={this.state.center.lng} temperature={this.state.temperature} precip={this.state.precip} summary={this.state.summary}/>
             <h4>Bars in {this.props.city}:</h4>
-            {barList}
+            <div className="barList">
+                {barList}
+            </div>
             {this.props.lat &&
                 <div className="mapContainer" style={{ height: '400px', width: '706px' }}>
                     <GoogleMapReact

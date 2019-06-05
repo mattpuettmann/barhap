@@ -1,23 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 .wholePage {
-  min-height: 100vh;
-  min-height: 100%;
+  position: relative;
 }
 
 .App {
   text-align: center;
   position: relative;
-  /* background-image: url('http://thebasementwc.com/wp-content/uploads/2019/02/bars-in-Lutz-FL-1080x628.jpg'); */
-  /* background-image: url('http://media.virbcdn.com/cdn_images/resize_1024x1024/f4/ff09fc6db70ad2c1-alley.jpg'); */
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100vh;
 }
 
 .App a {
   color: white;
   text-decoration: none;
+}
+
+.homePage {
+  background-image: url('http://thebasementwc.com/wp-content/uploads/2019/02/bars-in-Lutz-FL-1080x628.jpg');
+  height: 100%;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
 }
 
 .header {
@@ -59,9 +63,9 @@
   padding: 0 25px 10px 25px;
   border-radius: 5px;
   justify-content: center;
-  /* opacity: 0.9; */
+  background-color: rgba(169,169,169,.85);
   position: relative;
-  margin-top:20px;
+  margin-top: 70px;
 }
 .authDiv img {
   max-width: 60%;
@@ -69,22 +73,32 @@
 
 .authDiv h3 {
   font-family: Pacifico;
-  color: #7015EB;
+  color: #000000;
+  /* padding-bottom: 0; */
 }
 
 .barNames {
   color: #7015EB;
-  display: inline-block;
-  
+  display: inline-flex;
+  width: 20%;
+  height: 50px;
+  justify-content: center;
+  background-color: rgb(205, 205, 205);
+  vertical-align: middle;
+  margin: 0 5px 0 5px;
+
 }
 .barNames h5{
   font-size: 12px;
   display: inline;
+
   padding: 0 7px 0 7px;
 }
 
-text {
-  color: red;
+.barList {
+  padding-bottom: 20px;
+
+  /* display: flex; */
 }
 
 .weatherConditions h5 {
@@ -95,18 +109,29 @@ text {
 
 .regForm {
   position: relative;
+
 }
 .regFormInput {
   font-size: 10px;
+  font-family: Pacifico;
   padding-bottom: 10px;
+
+}
+.regFormInput input {
+  margin: 6px 0 6px 0;
+
 }
 
 .loginForm {
   position: relative;
+  font-family: Pacifico;
 }
 .loginFormInput {
   font-size: 10px;
   padding-bottom: 10px;
+}
+.loginFormInput input {
+  margin: 6px 0 6px 0;
 }
 
 
@@ -158,7 +183,7 @@ input[type=submit] {
   border-radius: 5px;
   min-height: 100vh;
   min-height: 100%;
-  padding-bottom: 25px;
+  margin-bottom: 25px;
 }
 .barsContainer h4 {
   padding-top: 10px;
@@ -180,9 +205,9 @@ input[type=submit] {
   color: white;
   padding-top: 5px;
   bottom: 0;
-  /* position: absolute; */
   width: 100%;
   height: 1rem; 
+  position: relative;
 }
 .footer a {
   text-decoration: none;

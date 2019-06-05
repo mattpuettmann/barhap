@@ -30,10 +30,10 @@ class LoginForm extends Component {
             <form onSubmit={this.handleSubmit}>
                 <h3>Login:</h3>
                 <div className="loginFormInput">
-                    Username: <br/>
-                    <input onChange={this.handleChange} type="text" name="username"/><br/>
-                    Password: <br/>
-                    <input onChange={this.handleChange} type="password" name="password"/><br/>
+
+                    <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/><br/>
+
+                    <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/><br/>
                 </div>
                 <input type="submit"/>
             </form>
