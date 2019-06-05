@@ -78,16 +78,20 @@ class BarsContainer extends Component {
         })
         const barList = this.state.bars.map((bar) => {
             return <div key={bar.id} className="barNames">
-                <h5>{bar.name}</h5>
+                <h5>{bar.name}, <span>{bar.rating}/5 stars</span></h5>
+                <h6>{bar.formatted_address}</h6>
+                {bar.opening_hours.open_now ?
+                <h6>Currently Open</h6>
+                :
+                null
+                }
             </div>
         })
         return <div className="barsContainer">
             <h4>The local weather in {this.props.city}:</h4>
             <ConditionsContainer city={this.props.city} lat={this.state.center.lat} lng={this.state.center.lng} temperature={this.state.temperature} precip={this.state.precip} summary={this.state.summary}/>
             <h4>Bars in {this.props.city}:</h4>
-            <div className="barList">
-                {barList}
-            </div>
+
             {this.props.lat &&
                 <div className="mapContainer" style={{ height: '400px', width: '706px' }}>
                     <GoogleMapReact
@@ -99,6 +103,11 @@ class BarsContainer extends Component {
                     </GoogleMapReact>
                 </div>
             }
+
+            <div className="barList">
+                {barList}
+            </div>
+
         </div>
     }
 }

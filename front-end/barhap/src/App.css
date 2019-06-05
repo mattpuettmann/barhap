@@ -79,20 +79,23 @@
 
 .barNames {
   color: #7015EB;
-  display: inline-flex;
-  width: 20%;
-  height: 50px;
+  /* display: inline-block;
+  width: 50%; */
+  height: 100px;
   justify-content: center;
   background-color: rgb(205, 205, 205);
   vertical-align: middle;
-  margin: 0 5px 0 5px;
+  margin: 5px 5px 5px 5px;
 
 }
 .barNames h5{
   font-size: 12px;
   display: inline;
-
-  padding: 0 7px 0 7px;
+  margin-bottom: 1px;
+}
+.barNames h6 {
+  /* margin-top: 2px; */
+  color: black;
 }
 
 .barList {
