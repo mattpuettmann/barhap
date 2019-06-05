@@ -33,10 +33,9 @@ class UserContainer extends Component {
     }
 
     render(){
-        console.log(this.props);
         return <div className="userContainer">
           
-            <h3>Welcome, {this.props.username}</h3>
+            {/* <h3>Welcome, {this.props.username}</h3> */}
             {this.state.searched ?
             null
             :
@@ -45,9 +44,6 @@ class UserContainer extends Component {
                 <input type="submit"/>
             </form>
             }
-
-
-            
             {this.props.isSearched ?
             <BarsContainer searchBars={this.searchBars} city={this.state.city} lat={this.props.lat} lng={this.props.lng}/>
             :

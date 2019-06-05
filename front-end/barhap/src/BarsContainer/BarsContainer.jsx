@@ -61,36 +61,30 @@ class BarsContainer extends Component {
     }
 
     render(){
-        const mapStuff = this.state.bars.map((bar) => {
-            console.log(bar.geometry.location.lat)
+        const mapStuff = this.state.bars.map((bar, index) => {
             return (
             <AnyReactComponent
                 color='red'
                 lat = {bar.geometry.location.lat}
                 lng = {bar.geometry.location.lng}
                 icon = {"/map-pin.png"}
-                // text="BAR!"
+                // icon = {"/number" + (index + 1) + ".png"}
                 />
-            )
-            // <Marker
-            //     position = {{lat: bar.geometry.location.lat, lng: bar.geometry.location.lng}}
-            //     icon = {{
-            //         url: 'http://www.myiconfinder.com/uploads/iconsets/256-256-76f453c62108782f0cad9bfc2da1ae9d.png',
-                    
-            //       }}
-            // />
-                
+            )              
         })
-        const barList = this.state.bars.map((bar) => {
+        const barList = this.state.bars.map((bar, index) => {
 
             return <div key={bar.id} className="barNames">
-                <h5>{bar.name}, <span>{bar.rating}/5 stars</span></h5>
-                <h6>{bar.formatted_address}</h6>
-                {(bar.opening_hours && bar.opening_hours.open_now) ?
-                <h6>Currently Open</h6>
-                :
-                null
-                }
+                <div className="barInfo">
+                    <h5>{bar.name}, <span>{bar.rating}/5 stars</span></h5>
+                    <h6>{bar.formatted_address}</h6>
+                    {(bar.opening_hours && bar.opening_hours.open_now) ?
+                    <h6><span className="open">Currently Open</span></h6>
+                    :
+                    <h6><span className="closed">Closed.</span></h6>
+                    }
+                </div>
+                    <h3 className="map-number">{index + 1}</h3>
             </div>
         })
         return <div className="barsContainer">

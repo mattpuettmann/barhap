@@ -29,6 +29,7 @@
   color: #FFFFFF;
   padding-top: 5px;
   padding-bottom: 10px;
+  /* margin-bottom: 35px; */
   max-height: 70px;
 }
 .header h2 {
@@ -79,30 +80,49 @@
 
 .barNames {
   color: #7015EB;
-  /* display: inline-block;
-  width: 50%; */
+  display: flex;
+
   height: 50px;
-  justify-content: center;
+  text-align: left;
+  padding-left: 10px;
   background-color: rgb(205, 205, 205);
-  vertical-align: middle;
   margin: 5px 5px 5px 5px;
+  border-radius: 5px;
 }
 .barNames h5{
+  text-align: left;
   font-size: 12px;
   display: inline;
   margin-bottom: 1px;
 }
 .barNames h6 {
+  text-align: left;
   margin-top: 2px;
   margin-bottom: 0;
+  color: black;
+}
+.barNames h3 {
   color: black;
 }
 .barNames span {
   color: black;
 }
+.barNames .open {
+  color: #03a4d1;
+}
+.barNames .closed {
+  color: gray
+}
 .barNames:hover {
   background-color:rgb(190, 190, 190);
 }
+.barNames .map-number {
+  flex: 1;
+}
+.barInfo {
+  flex: 9;
+}
+
 
 .barList {
   padding-bottom: 20px;
@@ -178,7 +198,10 @@ input[type=submit] {
   border-radius: 0;
 }
 
-
+.userContainer {
+  margin-top: 25px;
+  padding-top: 25px;
+}
 .userContainer input[type=text] {
   height: 24px;
   font-size: 15px;
@@ -196,15 +219,18 @@ input[type=submit] {
 }
 .barsContainer h4 {
   /* padding-top: 10px; */
+  margin-top: 7px;
   padding-bottom: 0;
   margin-bottom: 5px;
   font-family: Pacifico;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .weather h4 {
   background-color: #7015EB;
   color: #FFFFFF;
+  font-size: 18px;
+  border-radius: 5px 5px 0 0;
 }
 
 .mapContainer {
