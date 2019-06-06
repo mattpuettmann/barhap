@@ -66,16 +66,14 @@
 .authDiv h3 {
   font-family: Pacifico;
   color: #000000;
-  /* padding-bottom: 0; */
 }
 
 .barNames {
   color: #7015EB;
   display: flex;
-
   height: 50px;
   text-align: left;
-  padding-left: 40px;
+  padding-left: 25px;
   background-color: rgb(205, 205, 205);
   margin: 5px 5px 5px 5px;
   border-radius: 5px;
@@ -117,7 +115,14 @@
   flex: 9;
 }
 
+/* .bar-numbers {
+  color: red !important;
+} */
 
+/* .barNumbers {
+  color: red;
+} */
+  
 .barList {
   padding-bottom: 20px;
 

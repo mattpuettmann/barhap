@@ -71,12 +71,9 @@ class BarsContainer extends Component {
                 color='red'
                 lat = {bar.geometry.location.lat}
                 lng = {bar.geometry.location.lng}
-                // icon = {"/map-pin.png"}
-                // text = '1'
-                // icon = {"/number" + (index + 1) + ".png"}
-                //weird that the above still renders the icon even though stuff is commented out. Only mention is in AnyReactComponent up top, so can I even map individual numbers like i want?
+                // text = {index + 1}
                 />
-            )              
+            )           
         })
         const barList = this.state.bars.map((bar, index) => {
 
@@ -98,25 +95,24 @@ class BarsContainer extends Component {
                 <h4>Current conditions in {this.props.city}:</h4>
                 <ConditionsContainer city={this.props.city} lat={this.state.center.lat} lng={this.state.center.lng} temperature={this.state.temperature} precip={this.state.precip} summary={this.state.summary}/>          
             </div>
-
             <h4>Bars in {this.props.city}:</h4>
-
             {this.props.lat &&
                 <div className="mapContainer" style={{ height: '400px', width: '100%' }}>
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: 'AIzaSyDrIbIKBD3WPDwHWhiq7i9yaOEJp-C8xi4'}}
                         defaultCenter={this.state.center}
                         defaultZoom={this.state.zoom}
+                        defaultOptions={{
+                            style: "color: red"
+                        }}
                     >
                     {mapStuff}
                     </GoogleMapReact>
                 </div>
             }
-
             <div className="barList">
                 {barList}
             </div>
-
         </div>
     }
 }

@@ -15,7 +15,6 @@ class UserContainer extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         this.props.handleQuery(this.state.city)
-        this.showState()
         this.setState({
             searched: true
         })
@@ -25,11 +24,6 @@ class UserContainer extends Component {
         this.setState({
             [e.target.name] : e.target.value
         })
-    }
-
-    showState = () => {
-        console.log(this.state.city)
-        console.log(this.props)
     }
 
     render(){

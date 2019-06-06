@@ -99,7 +99,7 @@ class App extends Component {
         :
         <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
         }
-      <div className="footer">© 2019 RARE BREED COLLECTIVE // <a href="https://www.linkedin.com/in/matthewpuettmann/">HIRE MATT</a></div>
+      <div className="footer">© 2019 RARE BREED COLLECTIVE // <a href="https://www.linkedin.com/in/matthewpuettmann/" target="_blank">HIRE MATT</a></div>
       </div>
     </div>
   }

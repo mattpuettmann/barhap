@@ -5,7 +5,7 @@ Barhapp (a bar hop application!) allows users to plan their next event out on th
 MVP:
 1. New user registration ✔
 2. Login/Logout authentication ✔
-3. User location search serving as basis for Google Places and Dark Sky api's ✔
+3. User location search ability, serving as basis for Google Places and Dark Sky api's ✔
 4. Map rendered via Google Maps api ✔
 5. Weather data incorporated via Dark Sky api ✔
 6. Local nightlife location data incorporated via Google Places ✔
