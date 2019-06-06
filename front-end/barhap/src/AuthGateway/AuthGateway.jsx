@@ -19,6 +19,4 @@ class AuthGateway extends Component {
     }
 }
 
-
-
 export default AuthGateway

@@ -9,10 +9,12 @@
   position: relative;
   height: 100%;
 }
-
 .App a {
   color: white;
   text-decoration: none;
+}
+.App img {
+  position: relative;
 }
 
 .homePage {
@@ -29,7 +31,6 @@
   color: #FFFFFF;
   padding-top: 5px;
   padding-bottom: 10px;
-  /* margin-bottom: 35px; */
   max-height: 70px;
 }
 .header h2 {
@@ -41,19 +42,8 @@
   font-size: 8px;
 }
 
-/* .App h2 {
-  font-family: Pacifico;
-  color: #ffffff;
-  background-color: #7015EB;
-  margin-top: 0;
-  padding-top: 5px;
-  padding-bottom: 10px;
-} */
 
-.App img {
-  position: relative;
 
-}
 
 .authDiv {
   background-color: rgb(228, 228, 227);
@@ -171,7 +161,7 @@
 
 
 button {
-  background-color: #7015EB;
+  background-color: #CDCDCD;
   border: none;
   color: white;
   padding: 8px 16px;

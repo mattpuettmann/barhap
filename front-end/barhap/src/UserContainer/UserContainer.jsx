@@ -11,6 +11,7 @@ class UserContainer extends Component {
             searched: false
         }
     }
+
     handleSubmit = async (e) => {
         e.preventDefault();
         this.props.handleQuery(this.state.city)
@@ -34,8 +35,6 @@ class UserContainer extends Component {
     render(){
         console.log(this.props.loggedIn)
         return <div className="userContainer">
-          
-
             {this.state.searched ?
             null
             :
@@ -54,7 +53,5 @@ class UserContainer extends Component {
         </div>
     }
 }
-
-
 
 export default UserContainer

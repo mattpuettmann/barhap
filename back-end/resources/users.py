@@ -59,7 +59,6 @@ class UserList(Resource):
         new_users = [marshal(user, user_fields) for user in models.User.select()]
         return (new_users, 201)
 
-
     def post(self):
         args = self.reqparse.parse_args()
         if args['password'] == args['verify_password']:
@@ -70,9 +69,6 @@ class UserList(Resource):
             json.dumps({
                 'error': 'Password and password verification do not match'
             }), 400)
-
-
-
 
 class AuthList(Resource):
     def __init__(self):
@@ -106,10 +102,6 @@ class AuthList(Resource):
             login_user(user)
             return marshal(user, user_fields), 201
         print('wrong password ya goof!')
-
-
-
-
 
 users_api = Blueprint('resources.users', __name__)
 api = Api(users_api)

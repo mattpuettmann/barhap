@@ -56,9 +56,6 @@ class App extends Component {
           loggedIn: true,
           username: formData.username,
           email: parsedResponse.email,
-          // city: parsedResponse.city,
-          // state: parsedResponse.state,
-
         })
       }
     }catch(err){
@@ -90,7 +87,6 @@ class App extends Component {
     })
   }
 
-
   render(){
     console.log(this.state);
     return <div className="wholePage">
@@ -103,8 +99,6 @@ class App extends Component {
         :
         <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
         }
-        
-      
       <div className="footer">© 2019 RARE BREED COLLECTIVE // <a href="https://www.linkedin.com/in/matthewpuettmann/">HIRE MATT</a></div>
       </div>
     </div>

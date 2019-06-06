@@ -12,8 +12,8 @@ MVP:
 7. Nightlife data from Google Places api plotted on the interactive map ✔
 
 NICE TO HAVE:
-1. Fully responsive styling
-2. Check in capability for places
+1. Fully responsive styling ✔
+2. Check in capability for places 
 3. Deployed on Heroku
 
 SUPER NICE TO HAVE:

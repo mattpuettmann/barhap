@@ -4,7 +4,6 @@ from flask_cors import CORS, cross_origin
 from flask_login import current_user, LoginManager
 import models
 
-
 DEBUG = True
 PORT = 8000
 
@@ -13,10 +12,8 @@ app = Flask(__name__)
 app.secret_key = 'fewfrwfhu4h4gfhu4gt'
 login_manager.init_app(app)
 
-
 CORS(users_api, origins=["http://localhost:3000"], supports_credentials=True)
 app.register_blueprint(users_api, url_prefix='/users')
-
 
 @app.before_request
 def before_request():

@@ -6,9 +6,6 @@ import icon from '../map-pin-5.png';
 
 const AnyReactComponent = ({ text }) => <div>{text}<img src={icon}></img></div>;
 
-let x = null;
-
-
 class BarsContainer extends Component {
     constructor(){
         super();
@@ -42,9 +39,7 @@ class BarsContainer extends Component {
         this.showLocalConditions()
         this.linkToBars()
     }
-    componentWillReceiveProps(){
-        console.log(this.props);
-    }
+
     searchBars = async () => {
         const response = await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=bars+in+${this.props.city}&key=AIzaSyA2318qe8rH7UavfkasiDAngRA5wT3ESsw`)
         const parsedResponse = await response.json()
