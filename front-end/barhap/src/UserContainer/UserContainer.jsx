@@ -18,7 +18,6 @@ class UserContainer extends Component {
         this.setState({
             searched: true
         })
-
     }
 
     handleChange = (e) => {

@@ -17,7 +17,7 @@
 
 .homePage {
   background-image: url('./barhapp-bg.png');
-  height: 100vh;
+  height: 86vh;
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center center;
@@ -62,6 +62,8 @@
   display: inline-block;
   padding: 0 25px 10px 25px;
   border-radius: 5px;
+  border-style: solid;
+  border-color: #7015EB;
   justify-content: center;
   background-color: rgba(169,169,169,.85);
   position: relative;
@@ -136,7 +138,9 @@
   display: inline;
   margin: 0 10px 0 10px;
   font-size: 12px;
+  font-family: Pacifico;
 }
+
 
 .regForm {
   position: relative;
@@ -208,6 +212,9 @@ input[type=submit] {
   height: 24px;
   font-size: 15px;
 }
+.userContainer form {
+  height: 80vh;
+}
 
 .barsContainer {
   background-color: rgb(228, 228, 227);
@@ -234,6 +241,11 @@ input[type=submit] {
   font-size: 18px;
   border-radius: 5px 5px 0 0;
 }
+
+/* .tempNumber {
+  font-family: Pacifico;
+  color: red;
+} */
 
 .mapContainer {
   text-align: center;
