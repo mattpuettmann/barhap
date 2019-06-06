@@ -33,13 +33,15 @@ class UserContainer extends Component {
     }
 
     render(){
+        console.log(this.props.loggedIn)
         return <div className="userContainer">
           
-            {/* <h3>Welcome, {this.props.username}</h3> */}
+
             {this.state.searched ?
             null
             :
             <form onSubmit={this.handleSubmit}>
+                <h3>Welcome, {this.props.username}</h3>
                 Find Bars In: <input onChange={this.handleChange} type="text" name="city"/>
                 <input type="submit"/>
             </form>

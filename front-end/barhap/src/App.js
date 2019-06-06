@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import './App.css';
 import AuthGateway from './AuthGateway/AuthGateway';
 import UserContainer from './UserContainer/UserContainer';
@@ -69,7 +68,14 @@ class App extends Component {
 
   handleLogout =  () => {
     this.setState({
-      loggedIn: false
+      loggedIn: false,
+      username: null,
+      email: null,
+      city: null,
+      state: null,
+      lat: null,
+      lng: null,
+      isSearched: false
     })
   }
 
@@ -93,7 +99,7 @@ class App extends Component {
           <h2>Barhapp</h2>
         </div>
         {this.state.loggedIn ?
-        <UserContainer isSearched={this.state.isSearched} lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
+        <UserContainer isSearched={this.state.isSearched} loggedIn={this.state.loggedIn} lat={this.state.lat} lng={this.state.lng} handleLogout={this.handleLogout} handleQuery={this.handleQuery} username={this.state.username} city={this.state.city} state={this.state.state} showState={this.showState}/>
         :
         <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin} handleGeo={this.handleGeo}/>
         }

@@ -9,7 +9,6 @@ class ConditionsContainer extends Component {
     }
 
     render(){
-        console.log(this.props.temperature)
         return <div className="weatherConditions">
             <h5>{this.props.temperature}°F</h5>
             <h5>{this.props.summary}</h5>

@@ -34,7 +34,6 @@
 }
 .header h2 {
   font-family: Pacifico;
-  /* padding-bottom: 0; */
 }
 .header small {
   font-family: Pacifico;
@@ -84,7 +83,7 @@
 
   height: 50px;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 40px;
   background-color: rgb(205, 205, 205);
   margin: 5px 5px 5px 5px;
   border-radius: 5px;
@@ -118,6 +117,9 @@
 }
 .barNames .map-number {
   flex: 1;
+  font-family: Pacifico;
+  font-size: 28px;
+  margin-top: auto;
 }
 .barInfo {
   flex: 9;
@@ -199,8 +201,8 @@ input[type=submit] {
 }
 
 .userContainer {
-  margin-top: 25px;
-  padding-top: 25px;
+  margin-top: 5px;
+  padding-top: 5px;
 }
 .userContainer input[type=text] {
   height: 24px;
@@ -236,7 +238,7 @@ input[type=submit] {
 .mapContainer {
   text-align: center;
   justify-content: center;
-  width: 600px;
+  width: 100%;
 }
 
 .footer {
@@ -264,3 +266,11 @@ input[type=submit] {
 a:hover {
   color: #7BEAFE;
 }
+
+/* font-family: 'Varela Round';
+font-size: 2.5rem;
+line-height: 2.5rem;
+letter-spacing: 0.8rem;
+background: -webkit-linear-gradient(fade-out(white, 0.1), fade-out(white, 1));
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text; */

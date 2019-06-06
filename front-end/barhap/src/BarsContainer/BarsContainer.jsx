@@ -6,7 +6,7 @@ import icon from '../map-pin-5.png';
 
 const AnyReactComponent = ({ text }) => <div>{text}<img src={icon}></img></div>;
 
-
+let x = null;
 
 
 class BarsContainer extends Component {
@@ -23,7 +23,9 @@ class BarsContainer extends Component {
             bars: [],
             temperature: null,
             precip: null,
-            summary: null
+            summary: null,
+            id: null,
+            website: null
         }
     }
 
@@ -38,6 +40,7 @@ class BarsContainer extends Component {
         })
         this.searchBars()
         this.showLocalConditions()
+        this.linkToBars()
     }
     componentWillReceiveProps(){
         console.log(this.props);
@@ -60,6 +63,12 @@ class BarsContainer extends Component {
         })
     }
 
+    linkToBars = async () => {
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJWWhTTKtYXIYReBORjafOLT8&key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg`)
+        const parsedResponse = await response.json();
+        console.log(parsedResponse.result.website)
+    }
+
     render(){
         const mapStuff = this.state.bars.map((bar, index) => {
             return (
@@ -67,8 +76,10 @@ class BarsContainer extends Component {
                 color='red'
                 lat = {bar.geometry.location.lat}
                 lng = {bar.geometry.location.lng}
-                icon = {"/map-pin.png"}
+                // icon = {"/map-pin.png"}
+                // text = '1'
                 // icon = {"/number" + (index + 1) + ".png"}
+                //weird that the above still renders the icon even though stuff is commented out. Only mention is in AnyReactComponent up top, so can I even map individual numbers like i want?
                 />
             )              
         })
@@ -89,14 +100,14 @@ class BarsContainer extends Component {
         })
         return <div className="barsContainer">
             <div className="weather">
-                <h4>The local weather in {this.props.city}:</h4>
+                <h4>Current conditions in {this.props.city}:</h4>
                 <ConditionsContainer city={this.props.city} lat={this.state.center.lat} lng={this.state.center.lng} temperature={this.state.temperature} precip={this.state.precip} summary={this.state.summary}/>          
             </div>
 
             <h4>Bars in {this.props.city}:</h4>
 
             {this.props.lat &&
-                <div className="mapContainer" style={{ height: '400px', width: '706px' }}>
+                <div className="mapContainer" style={{ height: '400px', width: '100%' }}>
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: 'AIzaSyDrIbIKBD3WPDwHWhiq7i9yaOEJp-C8xi4'}}
                         defaultCenter={this.state.center}
